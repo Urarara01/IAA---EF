@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+C:\Users\KDW_L\Desktop\IAA - EF\.metadata\.plugins\org.eclipse.jdt.core
-798734745.index
-1731418908.index
-2568681066.index
