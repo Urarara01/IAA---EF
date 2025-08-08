@@ -13,23 +13,32 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SwingConstants;
+import java.awt.SystemColor;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.JSeparator;
 
 public class modal_consultar_producto extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnConsultar;
 	private JButton btnNuevo;
-	private JButton btnNewButton;
-	private JLabel lblModelo;
+	private JButton btnCerrar;
+	private JLabel lblCodigo;
 	private JComboBox cBModelo;
-	private JLabel lblIdDelProducto;
-	private JTextField textField;
+	private JLabel lblCantidad;
+	private JTextField tFCantidad;
+	private JLabel lblDescripcion;
+	private JTextField tFDescripcion;
+	private JLabel lblMarca;
+	private JLabel lblPrecio;
+	private JTextField tFPrecio;
 	private JLabel lblNewLabel;
-	private JTextField textField_1;
-	private JLabel lblNewLabel_1;
-	private JComboBox comboBox;
-	private JLabel lblNewLabel_2;
-	private JTextField textField_2;
+	private JSeparator separator;
+	private JTextField txtIntel;
+	private JLabel etiqueta2;
 
 	/**
 	 * Launch the application.
@@ -53,80 +62,117 @@ public class modal_consultar_producto extends JFrame {
 	public modal_consultar_producto() {
 		setTitle("Consultar Producto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 359);
+		setBounds(100, 100, 450, 367);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		btnConsultar = new JButton("Consultar");
-		btnConsultar.setBounds(324, 21, 89, 23);
+		btnConsultar.setForeground(Color.WHITE);
+		btnConsultar.setBackground(new Color(31, 64, 96));
+		btnConsultar.setBounds(162, 214, 105, 30);
 		contentPane.add(btnConsultar);
 		
 		btnNuevo = new JButton("Nuevo");
-		btnNuevo.setBounds(323, 51, 89, 22);
+		btnNuevo.setForeground(Color.WHITE);
+		btnNuevo.setBackground(new Color(31, 64, 96));
+		btnNuevo.setBounds(284, 214, 105, 30);
 		contentPane.add(btnNuevo);
 		
-		btnNewButton = new JButton("Cerrar");
-		btnNewButton.setBounds(324, 80, 89, 22);
-		contentPane.add(btnNewButton);
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setForeground(Color.WHITE);
+		btnCerrar.setBackground(new Color(31, 64, 96));
+		btnCerrar.setBounds(40, 214, 105, 30);
+		contentPane.add(btnCerrar);
 		
-		lblModelo = new JLabel("C\u00F3digo:");
-		lblModelo.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblModelo.setBounds(11, 26, 103, 14);
-		contentPane.add(lblModelo);
+		lblCodigo = new JLabel("C\u00F3digo:");
+		lblCodigo.setForeground(Color.WHITE);
+		lblCodigo.setBackground(new Color(51, 102, 153));
+		lblCodigo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCodigo.setBounds(30, 77, 85, 22);
+		lblCodigo.setOpaque(true);
+		contentPane.add(lblCodigo);
 		
 		cBModelo = new JComboBox();
-		cBModelo.setModel(new DefaultComboBoxModel(new String[] {"01234", "01235", "01236", "01568"}));
-		cBModelo.setBounds(117, 21, 161, 22);
+		cBModelo.setModel(new DefaultComboBoxModel(new String[] {"014030", "017657", "016850", "016532", "019503", "011167", "011657", "012939"}));
+		cBModelo.setBounds(114, 77, 85, 22);
 		contentPane.add(cBModelo);
 		
-		lblIdDelProducto = new JLabel("Cantidad:");
-		lblIdDelProducto.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblIdDelProducto.setBounds(11, 59, 103, 14);
-		contentPane.add(lblIdDelProducto);
+		lblCantidad = new JLabel("Cantidad:");
+		lblCantidad.setForeground(Color.WHITE);
+		lblCantidad.setBackground(new Color(51, 102, 153));
+		lblCantidad.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCantidad.setBounds(229, 77, 85, 22);
+		lblCantidad.setOpaque(true);
+		contentPane.add(lblCantidad);
 		
-		textField = new JTextField();
-		textField.setEnabled(false);
-		textField.setText("24");
-		textField.setColumns(10);
-		textField.setBounds(117, 56, 161, 22);
-		contentPane.add(textField);
+		tFCantidad = new JTextField();
+		tFCantidad.setEnabled(false);
+		tFCantidad.setText("24");
+		tFCantidad.setColumns(10);
+		tFCantidad.setBounds(313, 77, 85, 22);
+		contentPane.add(tFCantidad);
 		
-		lblNewLabel = new JLabel("Descripci\u00F3n:");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setBounds(11, 92, 103, 14);
+		lblDescripcion = new JLabel("Descripci\u00F3n:");
+		lblDescripcion.setForeground(Color.WHITE);
+		lblDescripcion.setBackground(new Color(51, 102, 153));
+		lblDescripcion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDescripcion.setBounds(30, 157, 85, 22);
+		lblDescripcion.setOpaque(true);
+		contentPane.add(lblDescripcion);
+		
+		tFDescripcion = new JTextField();
+		tFDescripcion.setEnabled(false);
+		tFDescripcion.setText("PROCESADOR INTEL CORE I3 10105F 3.7GHZ");
+		tFDescripcion.setColumns(10);
+		tFDescripcion.setBounds(114, 157, 284, 22);
+		contentPane.add(tFDescripcion);
+		
+		lblMarca = new JLabel("Marca:");
+		lblMarca.setForeground(Color.WHITE);
+		lblMarca.setBackground(new Color(51, 102, 153));
+		lblMarca.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMarca.setBounds(30, 117, 85, 22);
+		lblMarca.setOpaque(true);
+		contentPane.add(lblMarca);
+		
+		lblPrecio = new JLabel("Precio Unt.:");
+		lblPrecio.setForeground(Color.WHITE);
+		lblPrecio.setBackground(new Color(51, 102, 153));
+		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrecio.setBounds(229, 117, 85, 22);
+		lblPrecio.setOpaque(true);
+		contentPane.add(lblPrecio);
+		
+		tFPrecio = new JTextField();
+		tFPrecio.setEnabled(false);
+		tFPrecio.setText("279.0");
+		tFPrecio.setColumns(10);
+		tFPrecio.setBounds(313, 117, 85, 22);
+		contentPane.add(tFPrecio);
+		
+		lblNewLabel = new JLabel("Consultar Productos");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel.setBounds(18, 11, 197, 34);
 		contentPane.add(lblNewLabel);
 		
-		textField_1 = new JTextField();
-		textField_1.setEnabled(false);
-		textField_1.setText("PROCESADOR INTEL CORE I3 10105F 3.7GHZ");
-		textField_1.setColumns(10);
-		textField_1.setBounds(118, 90, 161, 20);
-		contentPane.add(textField_1);
+		separator = new JSeparator();
+		separator.setBounds(16, 56, 408, 2);
+		contentPane.add(separator);
 		
-		lblNewLabel_1 = new JLabel("Marca:");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_1.setBounds(10, 121, 104, 14);
-		contentPane.add(lblNewLabel_1);
+		txtIntel = new JTextField();
+		txtIntel.setText("Intel");
+		txtIntel.setEnabled(false);
+		txtIntel.setColumns(10);
+		txtIntel.setBounds(114, 117, 85, 22);
+		contentPane.add(txtIntel);
 		
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"INTEL", "MSI", "APACE", "AMD", "NVIDIA"}));
-		comboBox.setEnabled(false);
-		comboBox.setBounds(118, 117, 161, 18);
-		contentPane.add(comboBox);
 		
-		lblNewLabel_2 = new JLabel("Precio unitario:");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_2.setBounds(10, 151, 104, 14);
-		contentPane.add(lblNewLabel_2);
-		
-		textField_2 = new JTextField();
-		textField_2.setEnabled(false);
-		textField_2.setText("279.0");
-		textField_2.setColumns(10);
-		textField_2.setBounds(118, 149, 161, 20);
-		contentPane.add(textField_2);
+		ImageIcon imagen = new ImageIcon("iconconsultar.png");
+		etiqueta2 = new JLabel("");
+		etiqueta2.setBounds(220, 9, 40, 40);
+		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
+		contentPane.add(etiqueta2);
 	}
-
 }

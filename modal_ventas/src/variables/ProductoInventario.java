@@ -1,6 +1,6 @@
 package variables;
 
-public class variables {
+public class ProductoInventario {
 
     // Producto 1
 	public static int codigo1 = 14030;

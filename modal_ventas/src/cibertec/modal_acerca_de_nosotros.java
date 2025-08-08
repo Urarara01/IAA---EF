@@ -28,7 +28,7 @@ public class modal_acerca_de_nosotros extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
-	private JLabel lblNewLabel_4;
+	private JLabel etiqueta2;
 	/**
 	 * Launch the application.
 	 */
@@ -87,36 +87,42 @@ public class modal_acerca_de_nosotros extends JFrame {
 
 		panel_1.add(lblimage);
 		panel_1.add(lblimage);
-		panel_2.setBackground(new Color(249, 241, 221));
+		panel_2.setBackground(new Color(242, 249, 255));
 		panel_2.setBounds(0, 0, 205, 261);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
 		lblAcercaDeNosotros = new JLabel("Acerca de nosotros");
+		lblAcercaDeNosotros.setForeground(new Color(31, 64, 96));
 		lblAcercaDeNosotros.setBounds(10, 76, 185, 37);
 		lblAcercaDeNosotros.setFont(new Font("Roboto", Font.BOLD, 18));
 		lblAcercaDeNosotros.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblAcercaDeNosotros);
 		
+		ImageIcon imagen = new ImageIcon("iconviñetas.png");
+		etiqueta2 = new JLabel("");
+		etiqueta2.setBounds(23, 124, 14, 14);
+		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
+		contentPane.add(etiqueta2);
+		
 		lblNewLabel_1 = new JLabel("Luis Ernesto Sanchez");
-		lblNewLabel_1.setFont(new Font("Roboto", Font.PLAIN, 11));
-		lblNewLabel_1.setBounds(20, 124, 143, 14);
+		lblNewLabel_1.setFont(new Font("Roboto", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(40, 124, 120, 14);
 		panel_2.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("Christiam Araujo Hencke");
-		lblNewLabel_2.setFont(new Font("Roboto", Font.PLAIN, 11));
-		lblNewLabel_2.setBounds(20, 149, 143, 14);
+		lblNewLabel_2.setFont(new Font("Roboto", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(40, 149, 143, 14);
 		panel_2.add(lblNewLabel_2);
 		
-		lblNewLabel_3 = new JLabel("Yvan Vilchez Bellido");
-		lblNewLabel_3.setFont(new Font("Roboto", Font.PLAIN, 11));
-		lblNewLabel_3.setBounds(20, 174, 143, 14);
+		lblNewLabel_3 = new JLabel("Angel Acu\u00F1a Lobaton");
+		lblNewLabel_3.setFont(new Font("Roboto", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(40, 174, 143, 14);
 		panel_2.add(lblNewLabel_3);
 		
-		lblNewLabel_4 = new JLabel("Arturo Acu\u00F1a");
-		lblNewLabel_4.setFont(new Font("Roboto", Font.PLAIN, 11));
-		lblNewLabel_4.setBounds(20, 199, 143, 14);
-		panel_2.add(lblNewLabel_4);
+		
+		
+		
 		
 		
 	}

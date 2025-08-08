@@ -8,8 +8,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.JSeparator;
+import java.awt.SystemColor;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class modal_configurar_descuento extends JFrame {
 
@@ -18,16 +25,19 @@ public class modal_configurar_descuento extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField tFDescuento1;
+	private JTextField tFDescuento2;
+	private JTextField tFDescuento3;
+	private JTextField tFDescuento4;
 	private JLabel lblNewLabel_5;
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_7;
 	private JLabel lblNewLabel_8;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
+	private JButton btnAceptar;
+	private JButton btnCancelar;
+	private JLabel lblPorcentajeDeDescuento;
+	private JSeparator separator;
+	private JLabel etiqueta2;
 
 	/**
 	 * Launch the application.
@@ -51,79 +61,124 @@ public class modal_configurar_descuento extends JFrame {
 	public modal_configurar_descuento() {
 		setTitle("Porcentajes de descuento");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 180);
+		setBounds(100, 100, 450, 283);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		lblNewLabel = new JLabel("1 a 5 unidades");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBackground(new Color(51, 102, 153));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel.setBounds(10, 26, 134, 14);
+		lblNewLabel.setBounds(39, 76, 134, 22);
+		lblNewLabel.setOpaque(true);
 		contentPane.add(lblNewLabel);
 		
 		lblNewLabel_1 = new JLabel("6 a 10 unidades");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBackground(new Color(51, 102, 153));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1.setBounds(10, 51, 134, 14);
+		lblNewLabel_1.setBounds(39, 113, 134, 22);
+		lblNewLabel_1.setOpaque(true);
 		contentPane.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("11 a 15 unidades");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBackground(new Color(51, 102, 153));
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(10, 76, 134, 14);
+		lblNewLabel_2.setBounds(39, 150, 134, 22);
+		lblNewLabel_2.setOpaque(true);
 		contentPane.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("m\u00E1s de 15 unidades");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setBackground(new Color(51, 102, 153));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setBounds(10, 101, 134, 14);
+		lblNewLabel_3.setBounds(39, 187, 134, 22);
+		lblNewLabel_3.setOpaque(true);
 		contentPane.add(lblNewLabel_3);
 		
-		textField = new JTextField();
-		textField.setText("7.5");
-		textField.setBounds(154, 23, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tFDescuento1 = new JTextField();
+		tFDescuento1.setText("7.5");
+		tFDescuento1.setBounds(172, 76, 86, 22);
+		contentPane.add(tFDescuento1);
+		tFDescuento1.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setText("10.0");
-		textField_1.setColumns(10);
-		textField_1.setBounds(154, 48, 86, 20);
-		contentPane.add(textField_1);
+		tFDescuento2 = new JTextField();
+		tFDescuento2.setText("10.0");
+		tFDescuento2.setColumns(10);
+		tFDescuento2.setBounds(172, 113, 86, 22);
+		contentPane.add(tFDescuento2);
 		
-		textField_2 = new JTextField();
-		textField_2.setText("12.5");
-		textField_2.setColumns(10);
-		textField_2.setBounds(154, 73, 86, 20);
-		contentPane.add(textField_2);
+		tFDescuento3 = new JTextField();
+		tFDescuento3.setText("12.5");
+		tFDescuento3.setColumns(10);
+		tFDescuento3.setBounds(172, 150, 86, 22);
+		contentPane.add(tFDescuento3);
 		
-		textField_3 = new JTextField();
-		textField_3.setText("15.0");
-		textField_3.setColumns(10);
-		textField_3.setBounds(154, 98, 86, 20);
-		contentPane.add(textField_3);
+		tFDescuento4 = new JTextField();
+		tFDescuento4.setText("15.0");
+		tFDescuento4.setColumns(10);
+		tFDescuento4.setBounds(172, 187, 86, 22);
+		contentPane.add(tFDescuento4);
 		
 		lblNewLabel_5 = new JLabel("%");
-		lblNewLabel_5.setBounds(250, 26, 22, 14);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setBounds(258, 76, 22, 22);
 		contentPane.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("%");
-		lblNewLabel_6.setBounds(250, 51, 22, 14);
+		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_6.setBounds(258, 113, 22, 22);
 		contentPane.add(lblNewLabel_6);
 		
 		lblNewLabel_7 = new JLabel("%");
-		lblNewLabel_7.setBounds(250, 76, 22, 14);
+		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7.setBounds(258, 150, 22, 22);
 		contentPane.add(lblNewLabel_7);
 		
 		lblNewLabel_8 = new JLabel("%");
-		lblNewLabel_8.setBounds(250, 101, 22, 14);
+		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_8.setBounds(258, 187, 22, 22);
 		contentPane.add(lblNewLabel_8);
 		
-		btnNewButton = new JButton("Aceptar");
-		btnNewButton.setBounds(335, 22, 89, 23);
-		contentPane.add(btnNewButton);
+		btnAceptar = new JButton("Aceptar");
+		btnAceptar.setForeground(Color.WHITE);
+		btnAceptar.setBackground(new Color(31, 64, 96));
+		btnAceptar.setBounds(310, 75, 105, 30);
+		contentPane.add(btnAceptar);
 		
-		btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setBounds(335, 51, 89, 23);
-		contentPane.add(btnNewButton_1);
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setForeground(Color.WHITE);
+		btnCancelar.setBackground(new Color(31, 64, 96));
+		btnCancelar.setBounds(310, 117, 105, 30);
+		contentPane.add(btnCancelar);
+		
+		lblPorcentajeDeDescuento = new JLabel("Porcentaje de Descuento");
+		lblPorcentajeDeDescuento.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblPorcentajeDeDescuento.setBounds(19, 11, 241, 34);
+		contentPane.add(lblPorcentajeDeDescuento);
+		
+		
+		
+		separator = new JSeparator();
+		separator.setBounds(17, 56, 408, 2);
+		contentPane.add(separator);
+		
+		ImageIcon imagen = new ImageIcon("icondescuentos.png");
+		etiqueta2 = new JLabel("");
+		etiqueta2.setBounds(255, 9, 40, 40);
+		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
+		contentPane.add(etiqueta2);
+		
+		
+		
+		
 	}
 
 }

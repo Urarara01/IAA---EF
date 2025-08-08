@@ -8,19 +8,29 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-import static variables.variables.*;
+import static variables.ProductoInventario.*;
+import java.awt.SystemColor;
+import java.awt.Color;
+import javax.swing.JSeparator;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Image;
 
 public class modal_lista_productos extends JFrame {
 
 	private JPanel contentPane;
 	private JScrollPane scrollPane;
 	private JTextArea textArea;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
+	private JButton btnCerrar;
+	private JButton btnListar;
+	private JSeparator separator;
+	private JLabel lblLista;
+	private JLabel etiqueta2;
 
 	/**
 	 * Launch the application.
@@ -44,25 +54,29 @@ public class modal_lista_productos extends JFrame {
 	public modal_lista_productos() {
 		setTitle("Lista de productos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 386);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 414, 208);
+		scrollPane.setBounds(10, 75, 414, 208);
 		contentPane.add(scrollPane);
 		
 		textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 		
-		btnNewButton = new JButton("Cerrar");
-		btnNewButton.setBounds(103, 230, 89, 23);
-		contentPane.add(btnNewButton);
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setForeground(Color.WHITE);
+		btnCerrar.setBackground(new Color(31, 64, 96));
+		btnCerrar.setBounds(105, 301, 105, 30);
+		contentPane.add(btnCerrar);
 		
-		btnNewButton_1 = new JButton("Listar");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btnListar = new JButton("Listar");
+		btnListar.setForeground(Color.WHITE);
+		btnListar.setBackground(new Color(31, 64, 96));
+		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText("=== INVENTARIO DE PRODUCTOS ===\n\n" +
 						"Codigo: " + codigo1 + "\n" +
@@ -114,7 +128,24 @@ public class modal_lista_productos extends JFrame {
 						"Precio: " + precio8);
 			}
 		});
-		btnNewButton_1.setBounds(248, 230, 89, 23);
-		contentPane.add(btnNewButton_1);
+		btnListar.setBounds(242, 301, 105, 30);
+		contentPane.add(btnListar);
+		
+		separator = new JSeparator();
+		separator.setBounds(16, 56, 408, 2);
+		contentPane.add(separator);
+		
+		lblLista = new JLabel("Lista de Productos");
+		lblLista.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblLista.setBounds(18, 11, 182, 34);
+		contentPane.add(lblLista);
+		
+		
+		
+		ImageIcon imagen = new ImageIcon("iconlistar.png");
+		etiqueta2 = new JLabel("");
+		etiqueta2.setBounds(190, 9, 40, 40);
+		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
+		contentPane.add(etiqueta2);
 	}
 }

@@ -50,15 +50,15 @@ public class modal_alerta_avance_ventas extends JFrame {
 		contentPane.setLayout(null);
 		
 		lblNewLabel = new JLabel("Venta Nro. 5");
-		lblNewLabel.setBounds(63, 11, 361, 14);
+		lblNewLabel.setBounds(63, 21, 361, 14);
 		contentPane.add(lblNewLabel);
 		
 		lblImporteTotalGeneral = new JLabel("Importe total general acumulado : S/. 13,167.38");
-		lblImporteTotalGeneral.setBounds(63, 36, 361, 14);
+		lblImporteTotalGeneral.setBounds(63, 43, 361, 14);
 		contentPane.add(lblImporteTotalGeneral);
 		
 		lblPorcentajeDeLa = new JLabel("Porcentaje de la cuota diaria: 26.33%");
-		lblPorcentajeDeLa.setBounds(63, 61, 361, 14);
+		lblPorcentajeDeLa.setBounds(63, 62, 361, 14);
 		contentPane.add(lblPorcentajeDeLa);
 		
 		btnNewButton = new JButton("Aceptar");

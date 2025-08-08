@@ -10,21 +10,28 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import javax.swing.JSeparator;
+import java.awt.SystemColor;
+import java.awt.Color;
 
 public class modal_configurar_obsequios extends JFrame {
 
 	private JPanel contentPane;
-	private JLabel lblNewLabel;
-	private JLabel lblA;
-	private JLabel lblAMs;
-	private JTextField txtCafetera;
-	private JTextField txtLicuadora;
-	private JTextField txtExtractor;
-	private JButton btnNewButton;
-	private JButton btnCancelar;
-	private JLabel lblNewLabel_1;
+	private JLabel lblObsequios;
+	private JSeparator separator;
+	private JButton btnAceptar;
+	private JButton btnCancelar_1;
+	private JTextField txtMousepad;
+	private JTextField txtMemoriaNvme;
+	private JTextField txtDiscotb;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblUnidad;
+	private JLabel etiqueta2;
 
 	/**
 	 * Launch the application.
@@ -48,60 +55,87 @@ public class modal_configurar_obsequios extends JFrame {
 	public modal_configurar_obsequios() {
 		setTitle("Configurar obsequios");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 190);
+		setBounds(100, 100, 450, 240);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblNewLabel = new JLabel("1 unidad");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel.setBounds(10, 27, 111, 14);
-		contentPane.add(lblNewLabel);
+		lblObsequios = new JLabel("Obsequios");
+		lblObsequios.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblObsequios.setBounds(18, 11, 241, 34);
+		contentPane.add(lblObsequios);
 		
-		lblA = new JLabel("2 a 5 unidades");
-		lblA.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblA.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblA.setBounds(10, 54, 111, 14);
-		contentPane.add(lblA);
+		separator = new JSeparator();
+		separator.setBounds(16, 56, 408, 2);
+		contentPane.add(separator);
 		
-		lblAMs = new JLabel("6 a m\u00E1s unidades");
-		lblAMs.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAMs.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblAMs.setBounds(10, 84, 111, 14);
-		contentPane.add(lblAMs);
+		btnAceptar = new JButton("Aceptar");
+		btnAceptar.setForeground(Color.WHITE);
+		btnAceptar.setBackground(new Color(31, 64, 96));
+		btnAceptar.setBounds(309, 75, 105, 30);
+		contentPane.add(btnAceptar);
 		
-		txtCafetera = new JTextField();
-		txtCafetera.setText("Mousepad");
-		txtCafetera.setToolTipText("");
-		txtCafetera.setBounds(129, 27, 111, 20);
-		contentPane.add(txtCafetera);
-		txtCafetera.setColumns(10);
+		btnCancelar_1 = new JButton("Cancelar");
+		btnCancelar_1.setForeground(Color.WHITE);
+		btnCancelar_1.setBackground(new Color(31, 64, 96));
+		btnCancelar_1.setBounds(309, 117, 105, 30);
+		contentPane.add(btnCancelar_1);
 		
-		txtLicuadora = new JTextField();
-		txtLicuadora.setText("Memoria nvme");
-		txtLicuadora.setColumns(10);
-		txtLicuadora.setBounds(129, 55, 111, 20);
-		contentPane.add(txtLicuadora);
+		txtMousepad = new JTextField();
+		txtMousepad.setText("Mousepad");
+		txtMousepad.setColumns(10);
+		txtMousepad.setBounds(171, 76, 86, 22);
+		contentPane.add(txtMousepad);
 		
-		txtExtractor = new JTextField();
-		txtExtractor.setText("Disco 1tb");
-		txtExtractor.setColumns(10);
-		txtExtractor.setBounds(129, 82, 111, 20);
-		contentPane.add(txtExtractor);
+		txtMemoriaNvme = new JTextField();
+		txtMemoriaNvme.setText("Memoria nvme");
+		txtMemoriaNvme.setColumns(10);
+		txtMemoriaNvme.setBounds(171, 113, 86, 22);
+		contentPane.add(txtMemoriaNvme);
 		
-		btnNewButton = new JButton("Aceptar");
-		btnNewButton.setBounds(308, 23, 89, 23);
-		contentPane.add(btnNewButton);
+		txtDiscotb = new JTextField();
+		txtDiscotb.setText("Disco 1tb");
+		txtDiscotb.setColumns(10);
+		txtDiscotb.setBounds(171, 150, 86, 22);
+		contentPane.add(txtDiscotb);
 		
-		btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(308, 54, 89, 23);
-		contentPane.add(btnCancelar);
+		lblNewLabel_2 = new JLabel("6 a m\u00E1s unidades");
+		lblNewLabel_2.setOpaque(true);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_2.setBackground(new Color(51, 102, 153));
+		lblNewLabel_2.setBounds(38, 150, 134, 22);
+		contentPane.add(lblNewLabel_2);
 		
-		lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\KDW_L\\Downloads\\Brave Downloads\\3862dc65def9cd83ed07871f487d8000-regalo-de-cumpleanos-alegre (1).png"));
-		lblNewLabel_1.setBounds(318, 84, 56, 56);
-		contentPane.add(lblNewLabel_1);
+		lblNewLabel_3 = new JLabel("2 a 5 unidades");
+		lblNewLabel_3.setOpaque(true);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_3.setBackground(new Color(51, 102, 153));
+		lblNewLabel_3.setBounds(38, 113, 134, 22);
+		contentPane.add(lblNewLabel_3);
+		
+		lblUnidad = new JLabel("1 unidad");
+		lblUnidad.setOpaque(true);
+		lblUnidad.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUnidad.setForeground(Color.WHITE);
+		lblUnidad.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblUnidad.setBackground(new Color(51, 102, 153));
+		lblUnidad.setBounds(38, 76, 134, 22);
+		contentPane.add(lblUnidad);
+		
+		
+		ImageIcon imagen = new ImageIcon("iconobsequios.png");
+		etiqueta2 = new JLabel("");
+		etiqueta2.setBounds(120, 9, 40, 40);
+		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
+		contentPane.add(etiqueta2);
+		
+				
+		
+		
 	}
 }
