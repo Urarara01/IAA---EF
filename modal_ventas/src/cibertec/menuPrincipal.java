@@ -11,31 +11,33 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class menuPrincipal extends JFrame {
 
 	private JPanel contentPane;
 	private JMenuBar menuBar;
-	private JMenu mnNewMenu;
-	private JMenu mnNewMenu_1;
-	private JMenu mnNewMenu_2;
-	private JMenu mnNewMenu_3;
-	private JMenu mnNewMenu_4;
-	private JMenu mnNewMenu_5;
-	private JMenuItem mntmNewMenuItem;
-	private JMenuItem mntmNewMenuItem_1;
-	private JMenuItem mntmNewMenuItem_2;
-	private JMenuItem mntmNewMenuItem_3;
-	private JMenuItem mntmNewMenuItem_4;
-	private JMenuItem mntmNewMenuItem_5;
-	private JMenuItem mntmNewMenuItem_7;
-	private JMenuItem mntmNewMenuItem_8;
-	private JMenuItem mntmNewMenuItem_9;
-	private JMenuItem mntmNewMenuItem_10;
-	private JMenuItem mntmNewMenuItem_12;
-	private JMenuItem mntmNewMenuItem_13;
-	private JMenuItem mntmNewMenuItem_14;
-	private JMenuItem mntmNewMenuItem_6;
+	private JMenu mnArchivo;
+	private JMenu mnMantenimiento;
+	private JMenu mnVentas;
+	private JMenu mnConfiguracion;
+	private JMenu mnAyuda;
+	private JMenu mnRedesSociales;
+	private JMenuItem mntmCerrar;
+	private JMenuItem mntmConsultar;
+	private JMenuItem mntmModificar;
+	private JMenuItem mntmListar;
+	private JMenuItem mntmVender;
+	private JMenuItem mntmGenerarReportes;
+	private JMenuItem mntmDescuentos;
+	private JMenuItem mntmObsequios;
+	private JMenuItem mntmCantidad;
+	private JMenuItem mntmAcerca;
+	private JMenuItem mntmFacebook;
+	private JMenuItem mntmInstagram;
+	private JMenuItem mntmGmail;
+	private JMenuItem mntmCuotas;
 
 	/**
 	 * Launch the application.
@@ -66,71 +68,78 @@ public class menuPrincipal extends JFrame {
 		menuBar.setBackground(new Color(64, 128, 128));
 		setJMenuBar(menuBar);
 		
-		mnNewMenu = new JMenu("Archivo");
-		mnNewMenu.setFont(new Font("Calibri", Font.BOLD, 15));
-		menuBar.add(mnNewMenu);
+		mnArchivo = new JMenu("Archivo");
+		mnArchivo.setFont(new Font("Calibri", Font.BOLD, 15));
+		menuBar.add(mnArchivo);
 		
-		mntmNewMenuItem = new JMenuItem("Cerrar");
-		mnNewMenu.add(mntmNewMenuItem);
+		mntmCerrar = new JMenuItem("Cerrar");
+		mnArchivo.add(mntmCerrar);
 		
-		mnNewMenu_1 = new JMenu("Mantenimiento");
-		mnNewMenu_1.setFont(new Font("Calibri", Font.BOLD, 15));
-		menuBar.add(mnNewMenu_1);
+		mnMantenimiento = new JMenu("Mantenimiento");
+		mnMantenimiento.setFont(new Font("Calibri", Font.BOLD, 15));
+		menuBar.add(mnMantenimiento);
 		
-		mntmNewMenuItem_1 = new JMenuItem("Consultar");
-		mnNewMenu_1.add(mntmNewMenuItem_1);
+		mntmConsultar = new JMenuItem("Consultar");
+		mntmConsultar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modal_consultar_producto consultar = new modal_consultar_producto();
+				consultar.setLocationRelativeTo(mntmConsultar);
+				consultar.setVisible(true);
+			}
+		});
+		mnMantenimiento.add(mntmConsultar);
 		
-		mntmNewMenuItem_2 = new JMenuItem("Modificar");
-		mnNewMenu_1.add(mntmNewMenuItem_2);
+		mntmModificar = new JMenuItem("Modificar");
+		mnMantenimiento.add(mntmModificar);
 		
-		mntmNewMenuItem_3 = new JMenuItem("Listar");
-		mnNewMenu_1.add(mntmNewMenuItem_3);
+		mntmListar = new JMenuItem("Listar");
+		mnMantenimiento.add(mntmListar);
 		
-		mnNewMenu_2 = new JMenu("Ventas");
-		mnNewMenu_2.setFont(new Font("Calibri", Font.BOLD, 15));
-		menuBar.add(mnNewMenu_2);
+		mnVentas = new JMenu("Ventas");
+		mnVentas.setFont(new Font("Calibri", Font.BOLD, 15));
+		menuBar.add(mnVentas);
 		
-		mntmNewMenuItem_4 = new JMenuItem("Vender");
-		mnNewMenu_2.add(mntmNewMenuItem_4);
+		mntmVender = new JMenuItem("Vender");
+		mnVentas.add(mntmVender);
 		
-		mntmNewMenuItem_5 = new JMenuItem("Generar Reportes");
-		mnNewMenu_2.add(mntmNewMenuItem_5);
+		mntmGenerarReportes = new JMenuItem("Generar Reportes");
+		mnVentas.add(mntmGenerarReportes);
 		
-		mnNewMenu_3 = new JMenu("Configuracion");
-		mnNewMenu_3.setFont(new Font("Calibri", Font.BOLD, 15));
-		menuBar.add(mnNewMenu_3);
+		mnConfiguracion = new JMenu("Configuracion");
+		mnConfiguracion.setFont(new Font("Calibri", Font.BOLD, 15));
+		menuBar.add(mnConfiguracion);
 		
-		mntmNewMenuItem_7 = new JMenuItem("Descuentos");
-		mnNewMenu_3.add(mntmNewMenuItem_7);
+		mntmDescuentos = new JMenuItem("Descuentos");
+		mnConfiguracion.add(mntmDescuentos);
 		
-		mntmNewMenuItem_8 = new JMenuItem("Obsequios");
-		mnNewMenu_3.add(mntmNewMenuItem_8);
+		mntmObsequios = new JMenuItem("Obsequios");
+		mnConfiguracion.add(mntmObsequios);
 		
-		mntmNewMenuItem_9 = new JMenuItem("Cantidad");
-		mnNewMenu_3.add(mntmNewMenuItem_9);
+		mntmCantidad = new JMenuItem("Cantidad");
+		mnConfiguracion.add(mntmCantidad);
 		
-		mntmNewMenuItem_6 = new JMenuItem("Cuotas");
-		mnNewMenu_3.add(mntmNewMenuItem_6);
+		mntmCuotas = new JMenuItem("Cuotas");
+		mnConfiguracion.add(mntmCuotas);
 		
-		mnNewMenu_4 = new JMenu("Ayuda");
-		mnNewMenu_4.setFont(new Font("Calibri", Font.BOLD, 15));
-		menuBar.add(mnNewMenu_4);
+		mnAyuda = new JMenu("Ayuda");
+		mnAyuda.setFont(new Font("Calibri", Font.BOLD, 15));
+		menuBar.add(mnAyuda);
 		
-		mntmNewMenuItem_10 = new JMenuItem("Acerca");
-		mnNewMenu_4.add(mntmNewMenuItem_10);
+		mntmAcerca = new JMenuItem("Acerca");
+		mnAyuda.add(mntmAcerca);
 		
-		mnNewMenu_5 = new JMenu("Redes Sociales");
-		mnNewMenu_5.setFont(new Font("Calibri", Font.BOLD, 15));
-		menuBar.add(mnNewMenu_5);
+		mnRedesSociales = new JMenu("Redes Sociales");
+		mnRedesSociales.setFont(new Font("Calibri", Font.BOLD, 15));
+		menuBar.add(mnRedesSociales);
 		
-		mntmNewMenuItem_12 = new JMenuItem("Facebook");
-		mnNewMenu_5.add(mntmNewMenuItem_12);
+		mntmFacebook = new JMenuItem("Facebook");
+		mnRedesSociales.add(mntmFacebook);
 		
-		mntmNewMenuItem_13 = new JMenuItem("Instagram");
-		mnNewMenu_5.add(mntmNewMenuItem_13);
+		mntmInstagram = new JMenuItem("Instagram");
+		mnRedesSociales.add(mntmInstagram);
 		
-		mntmNewMenuItem_14 = new JMenuItem("GMAIL");
-		mnNewMenu_5.add(mntmNewMenuItem_14);
+		mntmGmail = new JMenuItem("GMAIL");
+		mnRedesSociales.add(mntmGmail);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));

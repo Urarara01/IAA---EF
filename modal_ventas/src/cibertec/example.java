@@ -14,13 +14,9 @@ import java.awt.event.ActionEvent;
 
 import static variables.variables.*;
 
-public class modal_lista_productos extends JFrame {
+public class example extends JFrame {
 
 	private JPanel contentPane;
-	private JScrollPane scrollPane;
-	private JTextArea textArea;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -29,7 +25,7 @@ public class modal_lista_productos extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					modal_lista_productos frame = new modal_lista_productos();
+					example frame = new example();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,8 +37,7 @@ public class modal_lista_productos extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public modal_lista_productos() {
-		setTitle("Lista de productos");
+	public example() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -50,20 +45,17 @@ public class modal_lista_productos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 414, 208);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(21, 53, 380, 180);
 		contentPane.add(scrollPane);
 		
-		textArea = new JTextArea();
+		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 		
-		btnNewButton = new JButton("Cerrar");
-		btnNewButton.setBounds(103, 230, 89, 23);
-		contentPane.add(btnNewButton);
-		
-		btnNewButton_1 = new JButton("Listar");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				textArea.setText("=== INVENTARIO DE PRODUCTOS ===\n\n" +
 						"Codigo: " + codigo1 + "\n" +
 						"Producto: " + producto1 + "\n" +
@@ -112,9 +104,10 @@ public class modal_lista_productos extends JFrame {
 						"Stock: " + stock8 + "\n" +
 						"Descripcion: " + descripcion8 + "\n" +
 						"Precio: " + precio8);
+
 			}
 		});
-		btnNewButton_1.setBounds(248, 230, 89, 23);
-		contentPane.add(btnNewButton_1);
+		btnNewButton.setBounds(147, 19, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }
