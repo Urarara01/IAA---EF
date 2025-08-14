@@ -88,7 +88,7 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 		lblCodigo.setBounds(31, 79, 85, 22);
 		contentPane.add(lblCodigo);
 		
-		lblMarca = new JLabel("Marca:");
+		lblMarca = new JLabel("Producto:");
 		lblMarca.setOpaque(true);
 		lblMarca.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMarca.setForeground(Color.WHITE);
@@ -196,56 +196,56 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 		switch (codigo) {
 			case 14030:
 				codigo1 = codigo;
-				producto1 = "PROCESADOR";
+				producto1 = marca;
 				stock1 = cantidad;
 				descripcion1 = descripcion;
 				precio1 = precio;
 				break;
 			case 17657:
 				codigo2 = codigo;
-				producto2 = "RAM";
+				producto2 = marca;
 				stock2 = cantidad;
 				descripcion2 = descripcion;
 				precio2 = precio;
 				break;
 			case 16850:
 				codigo3 = codigo;
-				producto3 = "PLACA MADRE";
+				producto3 = marca;
 				stock3 = cantidad;
 				descripcion3 = descripcion;
 				precio3 = precio;
 				break;
 			case 16532:
 				codigo4 = codigo;
-				producto4 = "GPU";
+				producto4 = marca;
 				stock4 = cantidad;
 				descripcion4 = descripcion;
 				precio4 = precio;
 				break;
 			case 19503:
 				codigo5 = codigo;
-				producto5 = "CASE";
+				producto5 = marca;
 				stock5 = cantidad;
 				descripcion5 = descripcion;
 				precio5 = precio;
 				break;
 			case 11167:
 				codigo6 = codigo;
-				producto6 = "MONITOR";
+				producto6 = marca;
 				stock6 = cantidad;
 				descripcion6 = descripcion;
 				precio6 = precio;
 				break;
 			case 11657:
 				codigo7 = codigo;
-				producto7 = "MOUSE";
+				producto7 = marca;
 				stock7 = cantidad;
 				descripcion7 = descripcion;
 				precio7 = precio;
 				break;
 			case 12939:
 				codigo8 = codigo;
-				producto8 = "TECLADO";
+				producto8 = marca;
 				stock8 = cantidad;
 				descripcion8 = descripcion;
 				precio8 = precio;
@@ -263,49 +263,49 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 
 	    switch (codigo) {
 	        case 14030:
-	            tFMarca.setText("Intel");
+	            tFMarca.setText(producto1);
 	            tFDescripcion.setText(descripcion1);
 	            tFCantidad.setText(String.valueOf(stock1));
 	            tFprecio.setText(String.valueOf(precio1));
 	            break;
 	        case 17657:
-	            tFMarca.setText("Kingston");
+	            tFMarca.setText(producto2);
 	            tFDescripcion.setText(descripcion2);
 	            tFCantidad.setText(String.valueOf(stock2));
 	            tFprecio.setText(String.valueOf(precio2));
 	            break;
 	        case 16850:
-	            tFMarca.setText("Asus");
+	            tFMarca.setText(producto3);
 	            tFDescripcion.setText(descripcion3);
 	            tFCantidad.setText(String.valueOf(stock3));
 	            tFprecio.setText(String.valueOf(precio3));
 	            break;
 	        case 16532:
-	            tFMarca.setText("NVIDIA");
+	            tFMarca.setText(producto4);
 	            tFDescripcion.setText(descripcion4);
 	            tFCantidad.setText(String.valueOf(stock4));
 	            tFprecio.setText(String.valueOf(precio4));
 	            break;
 	        case 19503:
-	            tFMarca.setText("Cooler Master");
+	            tFMarca.setText(producto5);
 	            tFDescripcion.setText(descripcion5);
 	            tFCantidad.setText(String.valueOf(stock5));
 	            tFprecio.setText(String.valueOf(precio5));
 	            break;
 	        case 11167:
-	            tFMarca.setText("LG");
+	            tFMarca.setText(producto6);
 	            tFDescripcion.setText(descripcion6);
 	            tFCantidad.setText(String.valueOf(stock6));
 	            tFprecio.setText(String.valueOf(precio6));
 	            break;
 	        case 11657:
-	            tFMarca.setText("Logitech");
+	            tFMarca.setText(producto7);
 	            tFDescripcion.setText(descripcion7);
 	            tFCantidad.setText(String.valueOf(stock7));
 	            tFprecio.setText(String.valueOf(precio7));
 	            break;
 	        case 12939:
-	            tFMarca.setText("Razer");
+	            tFMarca.setText(producto8);
 	            tFDescripcion.setText(descripcion8);
 	            tFCantidad.setText(String.valueOf(stock8));
 	            tFprecio.setText(String.valueOf(precio8));
