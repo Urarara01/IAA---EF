@@ -68,6 +68,10 @@ public class modal_lista_productos extends JFrame {
 		scrollPane.setViewportView(textArea);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnCerrar.setForeground(Color.WHITE);
 		btnCerrar.setBackground(new Color(31, 64, 96));
 		btnCerrar.setBounds(105, 301, 105, 30);

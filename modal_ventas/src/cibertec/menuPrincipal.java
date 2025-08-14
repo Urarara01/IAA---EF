@@ -78,6 +78,10 @@ public class menuPrincipal extends JFrame implements ActionListener {
 		mnArchivo.add(mntmCerrar);
 		
 		mnMantenimiento = new JMenu("Mantenimiento");
+		mnMantenimiento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		mnMantenimiento.setForeground(Color.WHITE);
 		mnMantenimiento.setFont(new Font("Calibri", Font.BOLD, 15));
 		menuBar.add(mnMantenimiento);
@@ -132,6 +136,10 @@ public class menuPrincipal extends JFrame implements ActionListener {
 		mnConfiguracion.add(mntmCuotas);
 		
 		mnAyuda = new JMenu("Ayuda");
+		mnAyuda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		mnAyuda.setForeground(Color.WHITE);
 		mnAyuda.setFont(new Font("Calibri", Font.BOLD, 15));
 		menuBar.add(mnAyuda);

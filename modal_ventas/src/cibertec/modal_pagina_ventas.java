@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import static variables.ProductoInventario.*;
+
 public class modal_pagina_ventas extends JFrame {
 
 	/**

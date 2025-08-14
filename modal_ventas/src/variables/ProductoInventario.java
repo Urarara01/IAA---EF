@@ -58,4 +58,18 @@ public class ProductoInventario {
 	public static String descripcion8 = "TECLADO GAMER ENKORE KINGDOM ENK1001 (ENK 1001) MECANICO, LED RGB";
 	public static double precio8 = 69.225;
 
+// ==========================================================
+// Configuracion aparte
+// ==========================================================
+	// Obsequios
+	public static String obsequio1 = "Mousepad";
+	public static String obsequio2a5 = "Memoria nvme";
+	public static String obsequio6amas = "Disco 1tb";
+
+	// Descuentos
+	public static double descuento1 = 0.075;
+	public static double descuento2 = 0.1;
+	public static double descuento3 = 0.125;
+	public static double descuento4 = 0.15;
+
 }

@@ -18,7 +18,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 
+import static variables.ProductoInventario.*;
+
 import javax.swing.JSeparator;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class modal_consultar_producto extends JFrame {
 
@@ -69,6 +73,11 @@ public class modal_consultar_producto extends JFrame {
 		contentPane.setLayout(null);
 		
 		btnConsultar = new JButton("Consultar");
+		btnConsultar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarProducto(cBModelo);
+			}
+		});
 		btnConsultar.setForeground(Color.WHITE);
 		btnConsultar.setBackground(new Color(31, 64, 96));
 		btnConsultar.setBounds(162, 214, 105, 30);
@@ -95,7 +104,7 @@ public class modal_consultar_producto extends JFrame {
 		contentPane.add(lblCodigo);
 		
 		cBModelo = new JComboBox();
-		cBModelo.setModel(new DefaultComboBoxModel(new String[] {"014030", "017657", "016850", "016532", "019503", "011167", "011657", "012939"}));
+		cBModelo.setModel(new DefaultComboBoxModel(new String[] {"14030", "17657", "16850", "16532", "19503", "11167", "11657", "12939"}));
 		cBModelo.setBounds(114, 77, 85, 22);
 		contentPane.add(cBModelo);
 		
@@ -129,7 +138,7 @@ public class modal_consultar_producto extends JFrame {
 		tFDescripcion.setBounds(114, 157, 284, 22);
 		contentPane.add(tFDescripcion);
 		
-		lblMarca = new JLabel("Marca:");
+		lblMarca = new JLabel("Producto:");
 		lblMarca.setForeground(Color.WHITE);
 		lblMarca.setBackground(new Color(51, 102, 153));
 		lblMarca.setHorizontalAlignment(SwingConstants.CENTER);
@@ -174,5 +183,66 @@ public class modal_consultar_producto extends JFrame {
 		etiqueta2.setBounds(220, 9, 40, 40);
 		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
 		contentPane.add(etiqueta2);
+	}
+	String ObtenerIdProducto(JComboBox idProducto){
+		return idProducto.getSelectedItem().toString();
+	}
+	// Add action listeners for buttons
+	public void ConsultarProducto(JComboBox idProducto) {
+		String id_producto;
+		// tFCantidad.setText("");
+		id_producto = ObtenerIdProducto(idProducto);
+		switch (id_producto) {
+			case "14030":
+				tFCantidad.setText(String.valueOf(stock1));
+				tFDescripcion.setText(descripcion1);
+				tFPrecio.setText(String.valueOf(precio1));
+				txtIntel.setText(String.valueOf(producto1));
+				break;
+			case "17657":
+				tFCantidad.setText(String.valueOf(stock2));
+				tFDescripcion.setText(descripcion2);
+				tFPrecio.setText(String.valueOf(precio2));
+				txtIntel.setText(String.valueOf(producto2));
+				break;
+			case "16850":
+				tFCantidad.setText(String.valueOf(stock3));
+				tFDescripcion.setText(descripcion3);
+				tFPrecio.setText(String.valueOf(precio3));
+				txtIntel.setText(String.valueOf(producto3));
+				break;
+			case "16532":
+				tFCantidad.setText(String.valueOf(stock4));
+				tFDescripcion.setText(descripcion4);
+				tFPrecio.setText(String.valueOf(precio4));
+				txtIntel.setText(String.valueOf(producto4));
+				break;
+			case "19503":
+				tFCantidad.setText(String.valueOf(stock5));
+				tFDescripcion.setText(descripcion5);
+				tFPrecio.setText(String.valueOf(precio5));
+				txtIntel.setText(String.valueOf(producto5));
+				break;
+			case "11167":
+				tFCantidad.setText(String.valueOf(stock6));
+				tFDescripcion.setText(descripcion6);
+				tFPrecio.setText(String.valueOf(precio6));
+				txtIntel.setText(String.valueOf(producto6));
+				break;
+			case "11657":
+				tFCantidad.setText(String.valueOf(stock7));
+				tFDescripcion.setText(descripcion7);
+				tFPrecio.setText(String.valueOf(precio7));
+				txtIntel.setText(String.valueOf(producto7));
+				break;
+			case "12939":
+				tFCantidad.setText(String.valueOf(stock8));
+				tFDescripcion.setText(descripcion8);
+				tFPrecio.setText(String.valueOf(precio8));
+				txtIntel.setText(String.valueOf(producto8));
+				break;
+			default:
+		}
+		
 	}
 }

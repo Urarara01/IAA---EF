@@ -18,6 +18,8 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Image;
 
+import static variables.ProductoInventario.*;
+
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
 import java.awt.Color;

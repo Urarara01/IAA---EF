@@ -1,5 +1,7 @@
 package cibertec;
 
+import static variables.ProductoInventario.obsequio1;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -17,6 +19,10 @@ import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import static variables.ProductoInventario.*;
 
 public class modal_configurar_obsequios extends JFrame {
 
@@ -25,9 +31,9 @@ public class modal_configurar_obsequios extends JFrame {
 	private JSeparator separator;
 	private JButton btnAceptar;
 	private JButton btnCancelar_1;
-	private JTextField txtMousepad;
-	private JTextField txtMemoriaNvme;
-	private JTextField txtDiscotb;
+	private JTextField tFobsequio1;
+	private JTextField tFobsequio2a5;
+	private JTextField tFobsequio6amas;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
 	private JLabel lblUnidad;
@@ -73,32 +79,32 @@ public class modal_configurar_obsequios extends JFrame {
 		btnAceptar = new JButton("Aceptar");
 		btnAceptar.setForeground(Color.WHITE);
 		btnAceptar.setBackground(new Color(31, 64, 96));
-		btnAceptar.setBounds(309, 75, 105, 30);
+		btnAceptar.setBounds(309, 72, 105, 30);
 		contentPane.add(btnAceptar);
 		
 		btnCancelar_1 = new JButton("Cancelar");
 		btnCancelar_1.setForeground(Color.WHITE);
 		btnCancelar_1.setBackground(new Color(31, 64, 96));
-		btnCancelar_1.setBounds(309, 117, 105, 30);
+		btnCancelar_1.setBounds(309, 146, 105, 30);
 		contentPane.add(btnCancelar_1);
 		
-		txtMousepad = new JTextField();
-		txtMousepad.setText("Mousepad");
-		txtMousepad.setColumns(10);
-		txtMousepad.setBounds(171, 76, 86, 22);
-		contentPane.add(txtMousepad);
+		tFobsequio1 = new JTextField();
+		tFobsequio1.setText("Mousepad");
+		tFobsequio1.setColumns(10);
+		tFobsequio1.setBounds(171, 76, 86, 22);
+		contentPane.add(tFobsequio1);
 		
-		txtMemoriaNvme = new JTextField();
-		txtMemoriaNvme.setText("Memoria nvme");
-		txtMemoriaNvme.setColumns(10);
-		txtMemoriaNvme.setBounds(171, 113, 86, 22);
-		contentPane.add(txtMemoriaNvme);
+		tFobsequio2a5 = new JTextField();
+		tFobsequio2a5.setText("Memoria nvme");
+		tFobsequio2a5.setColumns(10);
+		tFobsequio2a5.setBounds(171, 113, 86, 22);
+		contentPane.add(tFobsequio2a5);
 		
-		txtDiscotb = new JTextField();
-		txtDiscotb.setText("Disco 1tb");
-		txtDiscotb.setColumns(10);
-		txtDiscotb.setBounds(171, 150, 86, 22);
-		contentPane.add(txtDiscotb);
+		tFobsequio6amas = new JTextField();
+		tFobsequio6amas.setText("Disco 1tb");
+		tFobsequio6amas.setColumns(10);
+		tFobsequio6amas.setBounds(171, 150, 86, 22);
+		contentPane.add(tFobsequio6amas);
 		
 		lblNewLabel_2 = new JLabel("6 a m\u00E1s unidades");
 		lblNewLabel_2.setOpaque(true);
@@ -134,8 +140,28 @@ public class modal_configurar_obsequios extends JFrame {
 		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
 		contentPane.add(etiqueta2);
 		
-				
-		
-		
+		JButton btnModificar = new JButton("Modificar");
+		btnModificar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ModificarObsequios(tFobsequio1, tFobsequio2a5, tFobsequio6amas);
+			}
+		});
+		btnModificar.setForeground(Color.WHITE);
+		btnModificar.setBackground(new Color(31, 64, 96));
+		btnModificar.setBounds(309, 109, 105, 30);
+		contentPane.add(btnModificar);
+	}
+
+	String ObtenerValorDeTextField(JTextField textField) {
+		return textField.getText();
+	}
+
+	void ModificarObsequios(JTextField tFobsequio1, JTextField tFobsequio2a5, JTextField tFobsequio6amas) {
+		// Asignar los valores de los JTextField a las variables estáticas
+		// de ProductoInventario
+
+		obsequio1 = ObtenerValorDeTextField(tFobsequio1);
+		obsequio2a5 = ObtenerValorDeTextField(tFobsequio2a5);
+		obsequio6amas = ObtenerValorDeTextField(tFobsequio6amas);
 	}
 }
