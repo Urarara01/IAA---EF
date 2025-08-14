@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -15,14 +16,14 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Image;
-
 import static variables.ProductoInventario.*;
-
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class modal_modificar_producto extends JFrame {
+public class modal_modificar_producto extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JLabel lblNewLabel_3;
@@ -30,16 +31,17 @@ public class modal_modificar_producto extends JFrame {
 	private JLabel lblCodigo;
 	private JLabel lblMarca;
 	private JLabel lblDescripcion;
-	private JTextField textField;
+	private JTextField tFDescripcion;
 	private JComboBox cBModelo;
 	private JLabel lblCantidad;
 	private JLabel lblPrecio;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField tFprecio;
+	private JTextField tFCantidad;
 	private JButton btnGuardar;
-	private JButton btnCerrar;
-	private JTextField txtIntel;
+	private JButton btnConsultar;
+	private JTextField tFMarca;
 	private JLabel etiqueta2;
+	private JButton btnCerrar;
 
 	/**
 	 * Launch the application.
@@ -102,11 +104,11 @@ public class modal_modificar_producto extends JFrame {
 		lblDescripcion.setBounds(31, 159, 85, 22);
 		contentPane.add(lblDescripcion);
 		
-		textField = new JTextField();
-		textField.setText("PROCESADOR INTEL CORE I3 10105F 3.7GHZ");
-		textField.setColumns(10);
-		textField.setBounds(115, 159, 284, 22);
-		contentPane.add(textField);
+		tFDescripcion = new JTextField();
+		tFDescripcion.setText("PROCESADOR INTEL CORE I3 10105F 3.7GHZ");
+		tFDescripcion.setColumns(10);
+		tFDescripcion.setBounds(115, 159, 284, 22);
+		contentPane.add(tFDescripcion);
 		
 		cBModelo = new JComboBox();
 		cBModelo.setModel(new DefaultComboBoxModel(new String[] {"014030", "017657", "016850", "016532", "019503", "011167", "011657", "012939"}));
@@ -129,35 +131,37 @@ public class modal_modificar_producto extends JFrame {
 		lblPrecio.setBounds(230, 119, 85, 22);
 		contentPane.add(lblPrecio);
 		
-		textField_1 = new JTextField();
-		textField_1.setText("279.0");
-		textField_1.setColumns(10);
-		textField_1.setBounds(314, 119, 85, 22);
-		contentPane.add(textField_1);
+		tFprecio = new JTextField();
+		tFprecio.setText("279.0");
+		tFprecio.setColumns(10);
+		tFprecio.setBounds(314, 119, 85, 22);
+		contentPane.add(tFprecio);
 		
-		textField_2 = new JTextField();
-		textField_2.setText("24");
-		textField_2.setColumns(10);
-		textField_2.setBounds(314, 79, 85, 22);
-		contentPane.add(textField_2);
+		tFCantidad = new JTextField();
+		tFCantidad.setText("24");
+		tFCantidad.setColumns(10);
+		tFCantidad.setBounds(314, 79, 85, 22);
+		contentPane.add(tFCantidad);
 		
 		btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(this);
 		btnGuardar.setForeground(Color.WHITE);
 		btnGuardar.setBackground(new Color(31, 64, 96));
-		btnGuardar.setBounds(115, 216, 105, 30);
+		btnGuardar.setBounds(31, 216, 105, 30);
 		contentPane.add(btnGuardar);
 		
-		btnCerrar = new JButton("Cerrar");
-		btnCerrar.setForeground(Color.WHITE);
-		btnCerrar.setBackground(new Color(31, 64, 96));
-		btnCerrar.setBounds(237, 216, 105, 30);
-		contentPane.add(btnCerrar);
+		btnConsultar = new JButton("Consultar");
+		btnConsultar.addActionListener(this);
+		btnConsultar.setForeground(Color.WHITE);
+		btnConsultar.setBackground(new Color(31, 64, 96));
+		btnConsultar.setBounds(160, 216, 105, 30);
+		contentPane.add(btnConsultar);
 		
-		txtIntel = new JTextField();
-		txtIntel.setText("Intel");
-		txtIntel.setColumns(10);
-		txtIntel.setBounds(115, 119, 85, 22);
-		contentPane.add(txtIntel);
+		tFMarca = new JTextField();
+		tFMarca.setText("Intel");
+		tFMarca.setColumns(10);
+		tFMarca.setBounds(115, 119, 85, 22);
+		contentPane.add(tFMarca);
 		
 		ImageIcon imagen = new ImageIcon("iconmodificar.png");
 		etiqueta2 = new JLabel("");
@@ -165,6 +169,152 @@ public class modal_modificar_producto extends JFrame {
 		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
 		contentPane.add(etiqueta2);
 		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setForeground(Color.WHITE);
+		btnCerrar.setBackground(new Color(31, 64, 96));
+		btnCerrar.setBounds(294, 216, 105, 30);
+		contentPane.add(btnCerrar);
+		
 	
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnConsultar) {
+			actionPerformedBtnConsultar(e);
+		}
+		if (e.getSource() == btnGuardar) {
+			actionPerformedBtnGuardar(e);
+		}
+	}
+	protected void actionPerformedBtnGuardar(ActionEvent e) {
+		String codigoSeleccionado = (String) cBModelo.getSelectedItem();
+		int codigo = Integer.parseInt(codigoSeleccionado);
+		String marca = tFMarca.getText();
+		String descripcion = tFDescripcion.getText();
+		int cantidad = Integer.parseInt(tFCantidad.getText());
+		double precio = Double.parseDouble(tFprecio.getText());
+	
+		switch (codigo) {
+			case 14030:
+				codigo1 = codigo;
+				producto1 = "PROCESADOR";
+				stock1 = cantidad;
+				descripcion1 = descripcion;
+				precio1 = precio;
+				break;
+			case 17657:
+				codigo2 = codigo;
+				producto2 = "RAM";
+				stock2 = cantidad;
+				descripcion2 = descripcion;
+				precio2 = precio;
+				break;
+			case 16850:
+				codigo3 = codigo;
+				producto3 = "PLACA MADRE";
+				stock3 = cantidad;
+				descripcion3 = descripcion;
+				precio3 = precio;
+				break;
+			case 16532:
+				codigo4 = codigo;
+				producto4 = "GPU";
+				stock4 = cantidad;
+				descripcion4 = descripcion;
+				precio4 = precio;
+				break;
+			case 19503:
+				codigo5 = codigo;
+				producto5 = "CASE";
+				stock5 = cantidad;
+				descripcion5 = descripcion;
+				precio5 = precio;
+				break;
+			case 11167:
+				codigo6 = codigo;
+				producto6 = "MONITOR";
+				stock6 = cantidad;
+				descripcion6 = descripcion;
+				precio6 = precio;
+				break;
+			case 11657:
+				codigo7 = codigo;
+				producto7 = "MOUSE";
+				stock7 = cantidad;
+				descripcion7 = descripcion;
+				precio7 = precio;
+				break;
+			case 12939:
+				codigo8 = codigo;
+				producto8 = "TECLADO";
+				stock8 = cantidad;
+				descripcion8 = descripcion;
+				precio8 = precio;
+				break;
+			default:
+				JOptionPane.showMessageDialog(this, "Codigo de producto no reconocido", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+		}
+	
+		JOptionPane.showMessageDialog(this, "Producto modificado exitosamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+	}
+	protected void actionPerformedBtnConsultar(ActionEvent e) {
+	    String codigoSeleccionado = (String) cBModelo.getSelectedItem();
+	    int codigo = Integer.parseInt(codigoSeleccionado);
+
+	    switch (codigo) {
+	        case 14030:
+	            tFMarca.setText("Intel");
+	            tFDescripcion.setText(descripcion1);
+	            tFCantidad.setText(String.valueOf(stock1));
+	            tFprecio.setText(String.valueOf(precio1));
+	            break;
+	        case 17657:
+	            tFMarca.setText("Kingston");
+	            tFDescripcion.setText(descripcion2);
+	            tFCantidad.setText(String.valueOf(stock2));
+	            tFprecio.setText(String.valueOf(precio2));
+	            break;
+	        case 16850:
+	            tFMarca.setText("Asus");
+	            tFDescripcion.setText(descripcion3);
+	            tFCantidad.setText(String.valueOf(stock3));
+	            tFprecio.setText(String.valueOf(precio3));
+	            break;
+	        case 16532:
+	            tFMarca.setText("NVIDIA");
+	            tFDescripcion.setText(descripcion4);
+	            tFCantidad.setText(String.valueOf(stock4));
+	            tFprecio.setText(String.valueOf(precio4));
+	            break;
+	        case 19503:
+	            tFMarca.setText("Cooler Master");
+	            tFDescripcion.setText(descripcion5);
+	            tFCantidad.setText(String.valueOf(stock5));
+	            tFprecio.setText(String.valueOf(precio5));
+	            break;
+	        case 11167:
+	            tFMarca.setText("LG");
+	            tFDescripcion.setText(descripcion6);
+	            tFCantidad.setText(String.valueOf(stock6));
+	            tFprecio.setText(String.valueOf(precio6));
+	            break;
+	        case 11657:
+	            tFMarca.setText("Logitech");
+	            tFDescripcion.setText(descripcion7);
+	            tFCantidad.setText(String.valueOf(stock7));
+	            tFprecio.setText(String.valueOf(precio7));
+	            break;
+	        case 12939:
+	            tFMarca.setText("Razer");
+	            tFDescripcion.setText(descripcion8);
+	            tFCantidad.setText(String.valueOf(stock8));
+	            tFprecio.setText(String.valueOf(precio8));
+	            break;
+	        default:
+	            JOptionPane.showMessageDialog(this, "Codigo de producto no reconocido", "Error", JOptionPane.ERROR_MESSAGE);
+	            return;
+	    }
+
+	    JOptionPane.showMessageDialog(this, "Producto consultado exitosamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
 	}
 }
