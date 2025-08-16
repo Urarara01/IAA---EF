@@ -176,6 +176,11 @@ public class modal_configurar_descuento extends JFrame {
 		contentPane.add(btnAceptar);
 		
 		btnCancelar = new JButton("Cerrar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnCancelar.setForeground(Color.WHITE);
 		btnCancelar.setBackground(new Color(31, 64, 96));
 		btnCancelar.setBounds(310, 165, 105, 30);

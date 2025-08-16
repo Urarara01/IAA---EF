@@ -176,7 +176,9 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 		contentPane.add(scrollPane);
 		
 		tFDescripcion = new JTextArea();
+		tFDescripcion.setText("PROCESADOR INTEL CORE I3 12100F 3.3GHZ HASTA 4.3GHZ 12MB (BX8071512100F) LGA 170");
 		scrollPane.setViewportView(tFDescripcion);
+		tFDescripcion.setLineWrap(true);
 		
 	
 	}

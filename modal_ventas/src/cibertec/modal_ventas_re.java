@@ -114,12 +114,11 @@ public class modal_ventas_re extends JFrame {
 		
 		textField = new JTextField();
 		textField.setText("24");
-		textField.setEnabled(false);
 		textField.setColumns(10);
 		textField.setBounds(313, 77, 85, 22);
 		contentPane.add(textField);
 		
-		lblMarca = new JLabel("Marca:");
+		lblMarca = new JLabel("Producto:");
 		lblMarca.setOpaque(true);
 		lblMarca.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMarca.setForeground(Color.WHITE);
@@ -145,13 +144,13 @@ public class modal_ventas_re extends JFrame {
 		btnCerrar = new JButton("Cerrar");
 		btnCerrar.setForeground(Color.WHITE);
 		btnCerrar.setBackground(new Color(31, 64, 96));
-		btnCerrar.setBounds(96, 446, 105, 30);
+		btnCerrar.setBounds(30, 446, 105, 30);
 		contentPane.add(btnCerrar);
 		
 		btnRealizarVenta = new JButton("Realizar venta");
 		btnRealizarVenta.setForeground(Color.WHITE);
 		btnRealizarVenta.setBackground(new Color(31, 64, 96));
-		btnRealizarVenta.setBounds(218, 446, 120, 30);
+		btnRealizarVenta.setBounds(278, 446, 120, 30);
 		contentPane.add(btnRealizarVenta);
 		
 		lblPrecioUnts = new JLabel("Precio (S/):");
@@ -199,5 +198,11 @@ public class modal_ventas_re extends JFrame {
 		etiqueta2.setBounds(180, 9, 40, 40);
 		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
 		contentPane.add(etiqueta2);
+		
+		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.setForeground(Color.WHITE);
+		btnCalcular.setBackground(new Color(31, 64, 96));
+		btnCalcular.setBounds(145, 446, 120, 30);
+		contentPane.add(btnCalcular);
 	}
 }
