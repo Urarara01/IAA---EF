@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesUtiles.FlatLab;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ImageIcon;
@@ -36,6 +39,7 @@ public class modal_lista_productos extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		FlatLab.setup();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -53,7 +57,7 @@ public class modal_lista_productos extends JFrame {
 	 */
 	public modal_lista_productos() {
 		setTitle("Lista de productos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 386);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -70,6 +74,7 @@ public class modal_lista_productos extends JFrame {
 		btnCerrar = new JButton("Cerrar");
 		btnCerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 			}
 		});
 		btnCerrar.setForeground(Color.WHITE);
@@ -130,6 +135,7 @@ public class modal_lista_productos extends JFrame {
 						"Stock: " + stock8 + "\n" +
 						"Descripcion: " + descripcion8 + "\n" +
 						"Precio: " + precio8);
+				textArea.setLineWrap(true);
 			}
 		});
 		btnListar.setBounds(242, 301, 105, 30);

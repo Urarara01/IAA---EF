@@ -49,7 +49,7 @@ public class modal_acerca_de_nosotros extends JFrame {
 	 * Create the frame.
 	 */
 	public modal_acerca_de_nosotros() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setResizable(false);
 		setTitle("Acerca de nosotros");
 		setBounds(100, 100, 450, 300);

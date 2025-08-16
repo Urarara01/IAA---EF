@@ -22,6 +22,8 @@ import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class modal_modificar_producto extends JFrame implements ActionListener {
 
@@ -31,7 +33,6 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 	private JLabel lblCodigo;
 	private JLabel lblMarca;
 	private JLabel lblDescripcion;
-	private JTextField tFDescripcion;
 	private JComboBox cBModelo;
 	private JLabel lblCantidad;
 	private JLabel lblPrecio;
@@ -42,6 +43,7 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 	private JTextField tFMarca;
 	private JLabel etiqueta2;
 	private JButton btnCerrar;
+	private JTextArea tFDescripcion;
 
 	/**
 	 * Launch the application.
@@ -64,7 +66,7 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 	 */
 	public modal_modificar_producto() {
 		setTitle("Modificar producto");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 363);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -104,12 +106,6 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 		lblDescripcion.setBounds(31, 159, 85, 22);
 		contentPane.add(lblDescripcion);
 		
-		tFDescripcion = new JTextField();
-		tFDescripcion.setText("PROCESADOR INTEL CORE I3 10105F 3.7GHZ");
-		tFDescripcion.setColumns(10);
-		tFDescripcion.setBounds(115, 159, 284, 22);
-		contentPane.add(tFDescripcion);
-		
 		cBModelo = new JComboBox();
 		cBModelo.setModel(new DefaultComboBoxModel(new String[] {"014030", "017657", "016850", "016532", "019503", "011167", "011657", "012939"}));
 		cBModelo.setBounds(115, 79, 85, 22);
@@ -147,14 +143,14 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 		btnGuardar.addActionListener(this);
 		btnGuardar.setForeground(Color.WHITE);
 		btnGuardar.setBackground(new Color(31, 64, 96));
-		btnGuardar.setBounds(31, 216, 105, 30);
+		btnGuardar.setBounds(31, 255, 105, 30);
 		contentPane.add(btnGuardar);
 		
 		btnConsultar = new JButton("Consultar");
 		btnConsultar.addActionListener(this);
 		btnConsultar.setForeground(Color.WHITE);
 		btnConsultar.setBackground(new Color(31, 64, 96));
-		btnConsultar.setBounds(160, 216, 105, 30);
+		btnConsultar.setBounds(160, 255, 105, 30);
 		contentPane.add(btnConsultar);
 		
 		tFMarca = new JTextField();
@@ -172,8 +168,15 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 		btnCerrar = new JButton("Cerrar");
 		btnCerrar.setForeground(Color.WHITE);
 		btnCerrar.setBackground(new Color(31, 64, 96));
-		btnCerrar.setBounds(294, 216, 105, 30);
+		btnCerrar.setBounds(294, 255, 105, 30);
 		contentPane.add(btnCerrar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(115, 159, 284, 85);
+		contentPane.add(scrollPane);
+		
+		tFDescripcion = new JTextArea();
+		scrollPane.setViewportView(tFDescripcion);
 		
 	
 	}
@@ -314,7 +317,8 @@ public class modal_modificar_producto extends JFrame implements ActionListener {
 	            JOptionPane.showMessageDialog(this, "Codigo de producto no reconocido", "Error", JOptionPane.ERROR_MESSAGE);
 	            return;
 	    }
-
+	    
+	    tFDescripcion.setLineWrap(true);
 	    JOptionPane.showMessageDialog(this, "Producto consultado exitosamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
 	}
 }

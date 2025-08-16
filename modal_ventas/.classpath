@@ -7,5 +7,9 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="Librerias/flatlaf-3.2.5.jar"/>
+	<classpathentry kind="lib" path="Librerias/flatlaf-fonts-roboto-2.137.jar"/>
+	<classpathentry kind="lib" path="Librerias/flatlaf-3.6.jar"/>
+	<classpathentry kind="lib" path="Librerias/flatlaf-extras-3.2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

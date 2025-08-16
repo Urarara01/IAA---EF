@@ -1,11 +1,18 @@
 package cibertec;
 
-import java.awt.BorderLayout;
+import static variables.ProductoInventario.descuento1;
+import static variables.ProductoInventario.descuento2;
+import static variables.ProductoInventario.descuento3;
+import static variables.ProductoInventario.descuento4;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesUtiles.FlatLab;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
@@ -14,9 +21,11 @@ import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.JSeparator;
-import java.awt.SystemColor;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class modal_configurar_descuento extends JFrame {
 
@@ -43,8 +52,16 @@ public class modal_configurar_descuento extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		// Configuración simplificada de FlatLaf
+		FlatLab.setup(); // Usa tema oscuro por defecto
+		// Para tema claro usar: FlatLab.setupLightTheme();
+		
 		EventQueue.invokeLater(new Runnable() {
+			
+			
+			
 			public void run() {
+				
 				try {
 					modal_configurar_descuento frame = new modal_configurar_descuento();
 					frame.setVisible(true);
@@ -60,7 +77,7 @@ public class modal_configurar_descuento extends JFrame {
 	 */
 	public modal_configurar_descuento() {
 		setTitle("Porcentajes de descuento");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 283);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -147,16 +164,21 @@ public class modal_configurar_descuento extends JFrame {
 		lblNewLabel_8.setBounds(258, 187, 22, 22);
 		contentPane.add(lblNewLabel_8);
 		
-		btnAceptar = new JButton("Aceptar");
+		btnAceptar = new JButton("Consultar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarDescuento();
+			}
+		});
 		btnAceptar.setForeground(Color.WHITE);
 		btnAceptar.setBackground(new Color(31, 64, 96));
 		btnAceptar.setBounds(310, 75, 105, 30);
 		contentPane.add(btnAceptar);
 		
-		btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cerrar");
 		btnCancelar.setForeground(Color.WHITE);
 		btnCancelar.setBackground(new Color(31, 64, 96));
-		btnCancelar.setBounds(310, 117, 105, 30);
+		btnCancelar.setBounds(310, 165, 105, 30);
 		contentPane.add(btnCancelar);
 		
 		lblPorcentajeDeDescuento = new JLabel("Porcentaje de Descuento");
@@ -176,9 +198,37 @@ public class modal_configurar_descuento extends JFrame {
 		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
 		contentPane.add(etiqueta2);
 		
-		
-		
-		
+		JButton btnModificar = new JButton("Modificar");
+		btnModificar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ModificarDescuento();
+			}
+		});
+		btnModificar.setForeground(Color.WHITE);
+		btnModificar.setBackground(new Color(31, 64, 96));
+		btnModificar.setBounds(310, 120, 105, 30);
+		contentPane.add(btnModificar);
 	}
 
+	double ObtenerValorDeTextFieldParaDouble(JTextField textField) {
+		return Double.parseDouble(textField.getText());
+	}
+
+	String ObtenerValorDeTextField(JTextField textField) {
+		return textField.getText();
+	}
+
+	void ModificarDescuento() {
+		descuento1 = ObtenerValorDeTextFieldParaDouble(tFDescuento1)/100;
+		descuento2 = ObtenerValorDeTextFieldParaDouble(tFDescuento2)/100;
+		descuento3 = ObtenerValorDeTextFieldParaDouble(tFDescuento3)/100;
+		descuento4 = ObtenerValorDeTextFieldParaDouble(tFDescuento4)/100;
+	}
+
+	void ConsultarDescuento() {
+		tFDescuento1.setText(String.valueOf(descuento1*100));
+		tFDescuento2.setText(String.valueOf(descuento2*100));
+		tFDescuento3.setText(String.valueOf(descuento3*100));
+		tFDescuento4.setText(String.valueOf(descuento4*100));
+	}
 }

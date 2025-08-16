@@ -60,7 +60,7 @@ public class modal_configurar_obsequios extends JFrame {
 	 */
 	public modal_configurar_obsequios() {
 		setTitle("Configurar obsequios");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 240);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -76,13 +76,23 @@ public class modal_configurar_obsequios extends JFrame {
 		separator.setBounds(16, 56, 408, 2);
 		contentPane.add(separator);
 		
-		btnAceptar = new JButton("Aceptar");
+		btnAceptar = new JButton("Consultar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarObsequios();
+			}
+		});
 		btnAceptar.setForeground(Color.WHITE);
 		btnAceptar.setBackground(new Color(31, 64, 96));
 		btnAceptar.setBounds(309, 72, 105, 30);
 		contentPane.add(btnAceptar);
 		
-		btnCancelar_1 = new JButton("Cancelar");
+		btnCancelar_1 = new JButton("Cerrar");
+		btnCancelar_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnCancelar_1.setForeground(Color.WHITE);
 		btnCancelar_1.setBackground(new Color(31, 64, 96));
 		btnCancelar_1.setBounds(309, 146, 105, 30);
@@ -156,12 +166,19 @@ public class modal_configurar_obsequios extends JFrame {
 		return textField.getText();
 	}
 
-	void ModificarObsequios(JTextField tFobsequio1, JTextField tFobsequio2a5, JTextField tFobsequio6amas) {
-		// Asignar los valores de los JTextField a las variables estáticas
-		// de ProductoInventario
-
+	void ConsultarObsequios() {
+		tFobsequio1.setText(obsequio1);
+		tFobsequio2a5.setText(obsequio2a5);
+		tFobsequio6amas.setText(obsequio6amas);
+	}
+		
+	void ModificarObsequios() {
 		obsequio1 = ObtenerValorDeTextField(tFobsequio1);
 		obsequio2a5 = ObtenerValorDeTextField(tFobsequio2a5);
 		obsequio6amas = ObtenerValorDeTextField(tFobsequio6amas);
+	}
+
+	void ModificarObsequios(JTextField tFobsequio1, JTextField tFobsequio2a5, JTextField tFobsequio6amas) {
+		ModificarObsequios();
 	}
 }

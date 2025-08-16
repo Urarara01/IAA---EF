@@ -68,7 +68,7 @@ public class modal_ventas_re extends JFrame {
 	 */
 	public modal_ventas_re() {
 		setTitle("vender producto");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 566);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
