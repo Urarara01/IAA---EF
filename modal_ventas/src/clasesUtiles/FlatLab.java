@@ -33,6 +33,6 @@ public class FlatLab {
      * Configura FlatLaf con el tema por defecto (oscuro)
      */
     public static void setup() {
-        setupLightTheme();
+        setupDarkTheme();
     }
 }

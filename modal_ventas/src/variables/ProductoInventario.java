@@ -67,9 +67,14 @@ public class ProductoInventario {
 	public static String obsequio6amas = "Disco 1tb";
 
 	// Descuentos
-	public static double descuento1 = 0.075;
-	public static double descuento2 = 0.1;
-	public static double descuento3 = 0.125;
-	public static double descuento4 = 0.15;
+	public static double descuento1 = 0.075; // 5%
+	public static double descuento2 = 0.1; // 10%
+	public static double descuento3 = 0.125; // 12.5%
+	public static double descuento4 = 0.15; // 15%
+
+	public static double ImporteGeneral = 0.0;
+	public static int cantidadVentas = 0;
+	public static double cuotaDiaria = 30000.0;
+
 
 }

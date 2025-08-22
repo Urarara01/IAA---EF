@@ -99,19 +99,20 @@ public class modal_configurar_obsequios extends JFrame {
 		contentPane.add(btnCancelar_1);
 		
 		tFobsequio1 = new JTextField();
-		tFobsequio1.setText("Mousepad");
+
+		tFobsequio1.setText(obsequio1);
 		tFobsequio1.setColumns(10);
 		tFobsequio1.setBounds(171, 76, 86, 22);
 		contentPane.add(tFobsequio1);
 		
 		tFobsequio2a5 = new JTextField();
-		tFobsequio2a5.setText("Memoria nvme");
+		tFobsequio2a5.setText(obsequio2a5);
 		tFobsequio2a5.setColumns(10);
 		tFobsequio2a5.setBounds(171, 113, 86, 22);
 		contentPane.add(tFobsequio2a5);
 		
 		tFobsequio6amas = new JTextField();
-		tFobsequio6amas.setText("Disco 1tb");
+		tFobsequio6amas.setText(obsequio6amas);
 		tFobsequio6amas.setColumns(10);
 		tFobsequio6amas.setBounds(171, 150, 86, 22);
 		contentPane.add(tFobsequio6amas);

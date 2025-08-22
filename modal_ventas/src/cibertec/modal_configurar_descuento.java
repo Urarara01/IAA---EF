@@ -121,25 +121,25 @@ public class modal_configurar_descuento extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		tFDescuento1 = new JTextField();
-		tFDescuento1.setText("7.5");
+		tFDescuento1.setText(String.valueOf(descuento1*100));
 		tFDescuento1.setBounds(172, 76, 86, 22);
 		contentPane.add(tFDescuento1);
 		tFDescuento1.setColumns(10);
 		
 		tFDescuento2 = new JTextField();
-		tFDescuento2.setText("10.0");
+		tFDescuento2.setText(String.valueOf(descuento2*100));
 		tFDescuento2.setColumns(10);
 		tFDescuento2.setBounds(172, 113, 86, 22);
 		contentPane.add(tFDescuento2);
 		
 		tFDescuento3 = new JTextField();
-		tFDescuento3.setText("12.5");
+		tFDescuento3.setText(String.valueOf(descuento3*100));
 		tFDescuento3.setColumns(10);
 		tFDescuento3.setBounds(172, 150, 86, 22);
 		contentPane.add(tFDescuento3);
 		
 		tFDescuento4 = new JTextField();
-		tFDescuento4.setText("15.0");
+		tFDescuento4.setText(String.valueOf(descuento4*100));
 		tFDescuento4.setColumns(10);
 		tFDescuento4.setBounds(172, 187, 86, 22);
 		contentPane.add(tFDescuento4);
