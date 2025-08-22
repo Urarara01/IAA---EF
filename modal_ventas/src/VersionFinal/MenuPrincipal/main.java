@@ -20,7 +20,7 @@ public class main extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		clasesUtiles.FlatLab.setupLightTheme();
+		clasesUtiles.FlatLab.setup();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

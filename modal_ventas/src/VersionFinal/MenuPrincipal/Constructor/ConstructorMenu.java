@@ -3,6 +3,8 @@ package VersionFinal.MenuPrincipal.Constructor;
 import cibertec.test_consultar_producto;
 //import clasesUtiles.form.TestForm; Aqu� importar�s las ventanas a mostrar
 import clasesUtiles.WindowsTabbed;
+import panelesSistema.Consultar_productos;
+import panelesSistema.Listar;
 import raven.drawer.component.SimpleDrawerBuilder;
 import raven.drawer.component.footer.SimpleFooterData;
 import raven.drawer.component.header.SimpleHeaderData;
@@ -47,12 +49,15 @@ public class ConstructorMenu extends SimpleDrawerBuilder{
 					@Override
 					public void selected(MenuAction arg0, int Index, int subIndex) {
 						if (Index == 0) {
-							// Borrar el contenido actual del tabbed pane
-							WindowsTabbed.getInstance().removeAllTabbed();
 							WindowsTabbed.getInstance().addTab("Testing Wiwi", new test_consultar_producto());
-							//WindowsTabbed.setLocationRelativeTo(null); // Centrar ventana
+						} else if (Index == 1 && subIndex == 1) {
+							WindowsTabbed.getInstance().addTab("Consultar producto", new Consultar_productos());
+						} else if (Index == 2) {
+							WindowsTabbed.getInstance().addTab("Listar productos", new Listar());
 						}
-						System.out.println(getClass().getName()+ " says:" + "Men� seleccionado: Index=" + Index + ", SubIndex=" + subIndex);
+						
+						System.out.println(getClass().getName()+ " says:" + "Menú seleccionado: Index=" + Index + ", SubIndex=" + subIndex);
+
 						
 					}
 				})
