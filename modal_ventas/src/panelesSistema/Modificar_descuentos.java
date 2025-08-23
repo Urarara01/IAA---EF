@@ -1,0 +1,205 @@
+package panelesSistema;
+
+import static variables.ProductoInventario.descuento1;
+import static variables.ProductoInventario.descuento2;
+import static variables.ProductoInventario.descuento3;
+import static variables.ProductoInventario.descuento4;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import clasesUtiles.FlatLab;
+import clasesUtiles.TabbedForm;
+import clasesUtiles.centrarTabbedForm;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.JSeparator;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Modificar_descuentos extends TabbedForm {
+
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JTextField tFDescuento1;
+	private JTextField tFDescuento2;
+	private JTextField tFDescuento3;
+	private JTextField tFDescuento4;
+	private JLabel lblNewLabel_5;
+	private JLabel lblNewLabel_6;
+	private JLabel lblNewLabel_7;
+	private JLabel lblNewLabel_8;
+	private JButton btnAceptar;
+	private JLabel lblPorcentajeDeDescuento;
+	private JSeparator separator;
+	private JLabel etiqueta2;
+
+	/**
+	 * Create the frame.
+	 */
+	public Modificar_descuentos() {
+		
+		setLayout(null);
+		
+		lblNewLabel = new JLabel("1 a 5 unidades");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBackground(new Color(51, 102, 153));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel.setBounds(39, 76, 134, 22);
+		lblNewLabel.setOpaque(true);
+		add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("6 a 10 unidades");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBackground(new Color(51, 102, 153));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1.setBounds(39, 113, 134, 22);
+		lblNewLabel_1.setOpaque(true);
+		add(lblNewLabel_1);
+		
+		lblNewLabel_2 = new JLabel("11 a 15 unidades");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBackground(new Color(51, 102, 153));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_2.setBounds(39, 150, 134, 22);
+		lblNewLabel_2.setOpaque(true);
+		add(lblNewLabel_2);
+		
+		lblNewLabel_3 = new JLabel("m\u00E1s de 15 unidades");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setBackground(new Color(51, 102, 153));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_3.setBounds(39, 187, 134, 22);
+		lblNewLabel_3.setOpaque(true);
+		add(lblNewLabel_3);
+		
+		tFDescuento1 = new JTextField();
+		tFDescuento1.setText(String.valueOf(descuento1*100));
+		tFDescuento1.setBounds(172, 76, 86, 22);
+		add(tFDescuento1);
+		tFDescuento1.setColumns(10);
+		
+		tFDescuento2 = new JTextField();
+		tFDescuento2.setText(String.valueOf(descuento2*100));
+		tFDescuento2.setColumns(10);
+		tFDescuento2.setBounds(172, 113, 86, 22);
+		add(tFDescuento2);
+		
+		tFDescuento3 = new JTextField();
+		tFDescuento3.setText(String.valueOf(descuento3*100));
+		tFDescuento3.setColumns(10);
+		tFDescuento3.setBounds(172, 150, 86, 22);
+		add(tFDescuento3);
+		
+		tFDescuento4 = new JTextField();
+		tFDescuento4.setText(String.valueOf(descuento4*100));
+		tFDescuento4.setColumns(10);
+		tFDescuento4.setBounds(172, 187, 86, 22);
+		add(tFDescuento4);
+		
+		lblNewLabel_5 = new JLabel("%");
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setBounds(258, 76, 22, 22);
+		add(lblNewLabel_5);
+		
+		lblNewLabel_6 = new JLabel("%");
+		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_6.setBounds(258, 113, 22, 22);
+		add(lblNewLabel_6);
+		
+		lblNewLabel_7 = new JLabel("%");
+		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7.setBounds(258, 150, 22, 22);
+		add(lblNewLabel_7);
+		
+		lblNewLabel_8 = new JLabel("%");
+		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_8.setBounds(258, 187, 22, 22);
+		add(lblNewLabel_8);
+		
+		btnAceptar = new JButton("Consultar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarDescuento();
+			}
+		});
+		btnAceptar.setForeground(Color.WHITE);
+		btnAceptar.setBackground(new Color(31, 64, 96));
+		btnAceptar.setBounds(310, 75, 105, 30);
+		add(btnAceptar);
+		
+		lblPorcentajeDeDescuento = new JLabel("Porcentaje de Descuento");
+		lblPorcentajeDeDescuento.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblPorcentajeDeDescuento.setBounds(19, 11, 241, 34);
+		add(lblPorcentajeDeDescuento);
+		
+		
+		
+		separator = new JSeparator();
+		separator.setBounds(17, 56, 408, 2);
+		add(separator);
+		
+		ImageIcon imagen = new ImageIcon("icondescuentos.png");
+		etiqueta2 = new JLabel("");
+		etiqueta2.setBounds(255, 9, 40, 40);
+		etiqueta2.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiqueta2.getWidth(), etiqueta2.getHeight(), Image.SCALE_SMOOTH)));
+		add(etiqueta2);
+		
+		JButton btnModificar = new JButton("Modificar");
+		btnModificar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ModificarDescuento();
+			}
+		});
+		btnModificar.setForeground(Color.WHITE);
+		btnModificar.setBackground(new Color(31, 64, 96));
+		btnModificar.setBounds(310, 120, 105, 30);
+		add(btnModificar);
+	}
+
+	double ObtenerValorDeTextFieldParaDouble(JTextField textField) {
+		return Double.parseDouble(textField.getText());
+	}
+
+	String ObtenerValorDeTextField(JTextField textField) {
+		return textField.getText();
+	}
+
+	void ModificarDescuento() {
+		descuento1 = ObtenerValorDeTextFieldParaDouble(tFDescuento1)/100;
+		descuento2 = ObtenerValorDeTextFieldParaDouble(tFDescuento2)/100;
+		descuento3 = ObtenerValorDeTextFieldParaDouble(tFDescuento3)/100;
+		descuento4 = ObtenerValorDeTextFieldParaDouble(tFDescuento4)/100;
+	}
+
+	void ConsultarDescuento() {
+		tFDescuento1.setText(String.valueOf(descuento1*100));
+		tFDescuento2.setText(String.valueOf(descuento2*100));
+		tFDescuento3.setText(String.valueOf(descuento3*100));
+		tFDescuento4.setText(String.valueOf(descuento4*100));
+	}
+	@Override
+	public void formOpen() {
+		super.formOpen();
+		// Centrar el contenido cuando el formulario se abre
+		centrarTabbedForm.centerContent(this);
+	}
+}

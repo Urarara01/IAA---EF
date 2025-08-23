@@ -4,7 +4,13 @@ import cibertec.test_consultar_producto;
 //import clasesUtiles.form.TestForm; Aqu� importar�s las ventanas a mostrar
 import clasesUtiles.WindowsTabbed;
 import panelesSistema.Consultar_productos;
-import panelesSistema.Listar;
+import panelesSistema.Consultas;
+import panelesSistema.Listar_productos;
+import panelesSistema.Modificar_descuentos;
+import panelesSistema.Modificar_obsequios;
+import panelesSistema.Modificar_productos;
+import panelesSistema.acerca_de_nosotros;
+import panelesSistema.ventas;
 import raven.drawer.component.SimpleDrawerBuilder;
 import raven.drawer.component.footer.SimpleFooterData;
 import raven.drawer.component.header.SimpleHeaderData;
@@ -30,7 +36,7 @@ public class ConstructorMenu extends SimpleDrawerBuilder{
 		{"~VENTAS~"},
 		{"Vender producto"}, 
 		{"~CONSULTAS~"},
-		{"Consultas de la aplicación","Consultar productos","Consultar descuentos","Consultar obsequios"},
+		{"Consultas de la aplicación"},
 		{"Listar productos"},
 		{"~CONFIGURACIÓN~"},
 		{"Configuración de la aplicación"},
@@ -49,14 +55,22 @@ public class ConstructorMenu extends SimpleDrawerBuilder{
 					@Override
 					public void selected(MenuAction arg0, int Index, int subIndex) {
 						if (Index == 0) {
-							WindowsTabbed.getInstance().addTab("Testing Wiwi", new test_consultar_producto());
-						} else if (Index == 1 && subIndex == 1) {
-							WindowsTabbed.getInstance().addTab("Consultar producto", new Consultar_productos());
+							WindowsTabbed.getInstance().addTab("Ventas", new ventas());
+						} else if (Index == 1) {
+							WindowsTabbed.getInstance().addTab("Consultar producto", new Consultas());
 						} else if (Index == 2) {
-							WindowsTabbed.getInstance().addTab("Listar productos", new Listar());
+							WindowsTabbed.getInstance().addTab("Listar productos", new Listar_productos());
+						} else if (Index == 5) {
+							WindowsTabbed.getInstance().addTab("Acerca de nosotros", new acerca_de_nosotros());
+						} else if (Index == 4 && subIndex == 1) {
+							WindowsTabbed.getInstance().addTab("Modificar producto", new Modificar_productos());
+						} else if (Index == 4 && subIndex == 2) {
+							WindowsTabbed.getInstance().addTab("Modificar descuentos", new Modificar_descuentos());
+						} else if (Index == 4 && subIndex == 3) {
+							WindowsTabbed.getInstance().addTab("Modificar obsequios", new Modificar_obsequios());
 						}
-						
-						System.out.println(getClass().getName()+ " says:" + "Menú seleccionado: Index=" + Index + ", SubIndex=" + subIndex);
+
+						System.out.println(getClass().getName()+ " says:" + " Menú seleccionado: Index=" + Index + ", SubIndex=" + subIndex);
 
 						
 					}

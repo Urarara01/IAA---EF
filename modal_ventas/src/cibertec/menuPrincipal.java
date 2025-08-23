@@ -44,6 +44,7 @@ public class menuPrincipal extends JFrame implements ActionListener {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		clasesUtiles.FlatLab.setup();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
