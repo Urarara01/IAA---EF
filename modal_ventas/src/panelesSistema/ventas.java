@@ -140,6 +140,7 @@ public class ventas extends TabbedForm {
 				// int cantidad = Integer.parseInt(tFcantidad.getText());
 				int cantidad = ObtenerInt(tFcantidad);				
 				double precioUnitario = ObtenerDouble(tFprecio);
+
 				double total = cantidad * precioUnitario;
 
 				// Validar stock suficiente antes de proceder
@@ -183,24 +184,32 @@ public class ventas extends TabbedForm {
 				}
 
 				// Mostrar boleta en el área de texto
-				textArea.setText(""); // Limpiar
-				textArea.setFont(new Font("Roboto", Font.PLAIN, 12));
-				textArea.append("---- Boleta de venta ----\n\n");
-				textArea.append("Código: " + cBModelo.getSelectedItem() + "\n");
-				textArea.append("Producto: " + tFproducto.getText() + "\n");
-				textArea.append("Cantidad: " + cantidad + "\n");
-				textArea.append("Precio Unitario: S/ " + precioUnitario + "\n");
-				textArea.append("Importe compra: S/ " + totalFormateado + "\n");
-				textArea.append("Descuento aplicado: S/ " + descuentoFormateado + "\n");
-				textArea.append("Importe a pagar: S/ " + importePagarFormateado + "\n");
-				textArea.append("Obsequio: " + obsequio + "\n");
+				MostrarDatosDeVenta();
 
 				// Comprobar si corresponde mostrar felicitación por ventas
 				Comprobar5ventas(cantidadVentas);
 
 
 			}
+
+			void MostrarDatosDeVenta() {
+			// Mostrar datos de la venta
+			textArea.setText(""); // Limpiar
+			textArea.setFont(new Font("Roboto", Font.PLAIN, 12));
+			textArea.append("---- Boleta de venta ---- 000"+cantidadVentas+"\n\n");
+			textArea.append("Código: " + cBModelo.getSelectedItem() + "\n");
+			textArea.append("Producto: " + tFproducto.getText() + "\n");
+			textArea.append("Cantidad: " + tFcantidad.getText() + "\n");
+			textArea.append("Precio Unitario: S/ " + tFprecio.getText() + "\n");
+			textArea.append("Importe compra: S/ " + tFtotal.getText() + "\n");
+			textArea.append("Descuento aplicado: S/ " + FormatearAdos(importeDescuento) + "\n");
+			textArea.append("Importe a pagar: S/ " + FormatearAdos(ObtenerDouble(tFtotal) - importeDescuento) + "\n");
+			textArea.append("Obsequio: " + obsequio);
+		}
 		});
+
+		
+
 		btnRealizarVenta.setForeground(Color.WHITE);
 		btnRealizarVenta.setBackground(new Color(31, 64, 96));
 		btnRealizarVenta.setBounds(242, 446, 120, 30);
